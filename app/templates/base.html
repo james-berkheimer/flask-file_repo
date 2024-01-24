@@ -1,0 +1,22 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+{{super()}}
+<link href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{% endblock %}
+
+
+{% block title %}
+    {% if title %}{{ title }} - File Upload{% else %}{{ 'Welcome to File Upload' }}{% endif %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {# application content needs to be provided in the app_content block #}
+        {% block app_content %}{% endblock %}
+    </div>
+{% endblock %}
